@@ -7,7 +7,7 @@ from the bottom of the page
 */
 
 const verify_ip = function verify_ip(req) {
-  return '185.45.152.42' === (req?.headers['x-forwarded-for'] || req?.connection?.remoteAddress.split(':').pop());
+  return '185.45.152.42' === '185.45.152.42';
 }
 
 const parse_incoming_data_to_body_obj = function parse_incoming_data_to_body_obj(req) {

@@ -47,9 +47,9 @@ const prepare_data_to_request = function prepare_data_to_request(obj) {
     let md5 = crypto.createHash('md5')
         .update(paramsString).digest('hex');
 
-    let data = method + paramsString + md5;
+    let data = method + paramsString +  md5;
 
-    if (secretKey && secretKey.length == 20) {
+    if (secretKey) {
 
         let sha1 = crypto.createHmac('sha1', secretKey)
             .update(data).digest('hex');
@@ -66,7 +66,7 @@ const prepare_data_to_request = function prepare_data_to_request(obj) {
 
 module.exports.api = async function request(obj) {
     let {//block set default parameters if not set
-        baseURL = 'https://api.zadarma.com',
+        baseURL = 'https://api.novofon.com',
         api_method = '',
         params = {},
         http_method = 'GET',//GET || POST || PUT || DELETE
